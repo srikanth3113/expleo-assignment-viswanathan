@@ -1,0 +1,61 @@
+.stepperContainer {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: aqua;
+  z-index: 10;
+}
+.stepperContainer .step {
+  position: absolute;
+  border-radius: 50%;
+  /* line-height: 100px; */
+  /* text-align: center; */
+  width: 30px;
+  height: 30px;
+  background: #00c457;
+  border: 1px solid #00c457;
+  color: white;
+  border-radius: "50%";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.stepperContainer .step2 {
+  position: absolute;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #14284b;
+  border: 1px solid white;
+  color: white;
+  border-radius: "50%";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.stepperContainer .step-one {
+  top: 10px;
+  left: 10px;
+}
+.stepperContainer .step-one::after {
+  content: "";
+  /* position it in the middle of the circle */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* connect circles with a line */
+  width: 150px;
+  height: 0;
+  border-bottom: 2px dashed white;
+  /* make sure it's behind the circles */
+  z-index: -1;
+}
+.stepperContainer .step-two {
+  top: 10px;
+  left: 150px;
+}/*# sourceMappingURL=stepper.css.map */

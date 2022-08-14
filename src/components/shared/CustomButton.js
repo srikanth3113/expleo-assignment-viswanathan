@@ -1,33 +1,43 @@
 import React from "react";
 import { Button } from "@mui/material";
 
+
 export const CustomButton = (props) => {
+
   const {
-    label,
-    className,
-    onClick,
-    type,
     color,
-    startIcon,
-    variant,
-    isViewMode,
-    style,
+    label,
+    variant = "text",
+    type,
+    isViewMode = false,
   } = props;
 
   return (
-    <>
+    <div
+      style={{
+        height: "100%",
+        width: "25%",
+        margin: "auto",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "16px",
+        backgroundColor: "#F7F8F9",
+       
+      }}
+    >
       <Button
         variant={variant}
-        className={className}
-        onClick={onClick}
-        type={type}
-        sx={{ ...style }}
+        // className={props.uiSchema.className}
+        // onClick={() => props.uiSchema.onClick && props.uiSchema.onClick()}
+        type={type || "submit"}
         color={color}
-        startIcon={startIcon}
         disabled={isViewMode}
       >
         {label}
       </Button>
-    </>
+    </div>
   );
 };
+
+export default CustomButton;

@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 
-export function CustomTextField(props) {
+export default function CustomTextField(props) {
   const {
     type,
     name,
@@ -39,7 +39,7 @@ export function CustomTextField(props) {
       <TextField
         id="standard-basic"
         label={label}
-        variant={variant ? variant : "outlined"}
+        variant={variant ? variant : "filled"}
         type={"text"}
         name={name}
         fullWidth={fullWidth}

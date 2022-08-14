@@ -9,9 +9,8 @@ const StyledFooterContainer = styled(Box)(({ theme }) => ({
     width: "100%",
     height: "70px",
     padding: "10px",
-    backgroundColor: "yellow",
-    borderTop: "1px solid #202020",
     boxSizing: "border-box",
+    boxShadow: "0px 0 10px rgba(0, 0, 0, 0.8)"
 }));
 function footer() {
     return (
