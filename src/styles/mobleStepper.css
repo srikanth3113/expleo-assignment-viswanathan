@@ -1,5 +1,5 @@
 .mobilestepperContainer {
-  width: 100%;
+  width: 100vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -7,6 +7,8 @@
 .mobilestepperContainer .stepperHeadingContainer {
   display: flex;
   justify-content: space-between;
+  height: 50px;
+  padding: 0 2%;
 }
 .mobilestepperContainer .stepperHeadingContainer p {
   font-size: 18px;
@@ -15,17 +17,20 @@
   width: fit-content;
 }
 .mobilestepperContainer .pageIndicatorContainer {
+  display: flex;
+  justify-content: space-around;
   width: 100%;
-  height: 50px;
-  background-color: aqua;
+  height: 5px;
 }
 .mobilestepperContainer .pageIndicatorContainer .leftIndicator {
-  height: 100%;
-  width: 45%;
+  width: 50%;
   background-color: green;
+  border-right: 1.5px solid black;
+  margin-left: 2%;
 }
 .mobilestepperContainer .pageIndicatorContainer .rightIndicator {
-  height: 100%;
-  width: 45%;
-  background-color: red;
+  width: 50%;
+  background-color: grey;
+  border-left: 1.5px solid black;
+  margin-right: 2%;
 }/*# sourceMappingURL=mobleStepper.css.map */

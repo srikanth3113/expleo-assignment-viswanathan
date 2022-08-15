@@ -6,7 +6,10 @@
   height: -moz-fit-content;
   height: fit-content;
   background-color: aqua;
-  z-index: 10;
+}
+.stepperContainer p {
+  position: absolute;
+  top: 20px;
 }
 .stepperContainer .step {
   position: absolute;
@@ -23,6 +26,9 @@
   justify-content: center;
   align-items: center;
   font-size: 18px;
+}
+.stepperContainer .step p {
+  color: #00c457;
 }
 .stepperContainer .step2 {
   position: absolute;

@@ -12,11 +12,11 @@ const FormContainer = styled(Box)(({ theme }) => {
     return {
         width: "45%",
         // height: "calc(100vh - 66px)",
-        height: "fit-content",
+   
         background: "#FFFFFF",
         border: `1px solid ${theme.palette.secondary.light}`,
         borderRadius: "8px",
-        margin: "auto",
+        margin: "30px auto",
         display: "flex",
         justifyContent: "center",
         padding: "20px",
@@ -64,7 +64,7 @@ const PostCodeFormContainer = styled(Box)({
 });
 const PostcodeHeader = styled(Box)({
     display: "flex",
-    alignItems: "center",   
+    alignItems: "center",
     justifyContent: "center",
     width: "100%",
 

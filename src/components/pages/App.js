@@ -6,10 +6,10 @@ import MobileStepper from "../shared/mobileStepper"
 function App() {
   return (
     <div className="App">
-      {/* <PageOne /> */}
+      <PageOne />
       {/* <Stepper /> */}
       {/* <Toggle/> */}
-      <MobileStepper />
+      {/* <MobileStepper /> */}
     </div>
   );
 }

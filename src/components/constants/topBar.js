@@ -22,6 +22,9 @@ const StyledIconContainer = styled(Box)({
     width: "100px",
     backgroundColor: "#00AFF4"
 });
+const StyledStepperContainer = styled(Box)({
+    zIndex:"10"
+});
 const StyledCloseButton = styled(CloseIcon)(({ theme }) => {
     return {
         width: "70px",
@@ -45,7 +48,9 @@ export default function topBar() {
     return (
         <StyledtopBarContainer>
             <StyledIconContainer />
-            <Stepper />
+            <StyledStepperContainer>
+                <Stepper />
+            </StyledStepperContainer>
             <Box>
                 <StyledNavigateBeforeButton />
                 <StyledCloseButton />
