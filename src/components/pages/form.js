@@ -3,7 +3,7 @@ import { styled } from "@mui/system";
 import { Box, Typography } from '@mui/material';
 import CustomButton from "../shared/CustomButton";
 import CustomTextField from "../shared/CustomTextField";
-
+import Toggle from "../shared/customToggleButton"
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
@@ -35,9 +35,10 @@ const ButtonContainer = styled(Box)({
 
 });
 const ToggleContainer = styled(Box)({
-    height: "48px",
+    height: "fit-content",
     width: "100%",
-    border: "1px solid red"
+    display: "flex",
+    justifyContent: "center",
 
 });
 const RegistrationFormContainer = styled(Box)({
@@ -47,10 +48,15 @@ const RegistrationFormContainer = styled(Box)({
 });
 const RegistrationHeader = styled(Box)({
     display: "flex",
-    // fontWeight: "bold",
+    alignItems: "center",
     justifyContent: "center",
     width: "100%",
 });
+const RegistrationHeadingText = styled(Typography)({
+    fontWeight: "bold",
+    marginBottom: "0px"
+});
+
 const PostCodeFormContainer = styled(Box)({
     height: "auto",
     width: "100%",
@@ -58,8 +64,13 @@ const PostCodeFormContainer = styled(Box)({
 });
 const PostcodeHeader = styled(Box)({
     display: "flex",
+    alignItems: "center",   
+    justifyContent: "center",
     width: "100%",
 
+});
+const PostcodeHeadingText = styled(Typography)({
+    fontWeight: "bold",
 });
 const SwitchableFormContainer = styled(Box)({
     width: "100%",
@@ -76,15 +87,17 @@ function form() {
                     <Typography variant="h6" gutterBottom component="div">
                         What's your vehicle registration number or garaging postcode?
                     </Typography>
-                    <ToggleContainer />
+                    <ToggleContainer>
+                        <Toggle />
+                    </ToggleContainer>
                 </Box>
 
                 <SwitchableFormContainer>
                     <RegistrationFormContainer >
                         <RegistrationHeader>
-                            <Typography variant="h6" gutterBottom component="div">
+                            <RegistrationHeadingText variant="h6" component="div">
                                 What's your vehicle registration number?
-                            </Typography>
+                            </RegistrationHeadingText>
                             <Tooltip title="Delete">
                                 <IconButton>
                                     <InfoOutlinedIcon />
@@ -97,9 +110,9 @@ function form() {
 
                     <PostCodeFormContainer >
                         <PostcodeHeader>
-                            <Typography variant="h6" gutterBottom component="div">
+                            <PostcodeHeadingText variant="h6" component="div">
                                 What's your postcode?
-                            </Typography>
+                            </PostcodeHeadingText>
                             <Tooltip title="Delete">
                                 <IconButton>
                                     <InfoOutlinedIcon />
