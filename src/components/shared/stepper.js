@@ -1,6 +1,4 @@
 import React from 'react'
-import { styled } from "@mui/system";
-import { Box } from '@mui/material';
 import "../../styles/stepper.css"
 
 function stepper() {

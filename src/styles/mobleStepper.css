@@ -1,5 +1,5 @@
 .mobilestepperContainer {
-  width: 100vw;
+  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -8,29 +8,27 @@
   display: flex;
   justify-content: space-between;
   height: 50px;
-  padding: 0 2%;
 }
 .mobilestepperContainer .stepperHeadingContainer p {
   font-size: 18px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  color: white;
 }
 .mobilestepperContainer .pageIndicatorContainer {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  height: 5px;
+  height: 3px;
 }
 .mobilestepperContainer .pageIndicatorContainer .leftIndicator {
   width: 50%;
   background-color: green;
   border-right: 1.5px solid black;
-  margin-left: 2%;
 }
 .mobilestepperContainer .pageIndicatorContainer .rightIndicator {
   width: 50%;
   background-color: grey;
   border-left: 1.5px solid black;
-  margin-right: 2%;
 }/*# sourceMappingURL=mobleStepper.css.map */

@@ -1,10 +1,12 @@
 .stepperContainer {
   width: fit-content;
   height: fit-content;
+  position: relative;
   background-color: aqua;
-  p{
+  p {
     position: absolute;
     top: 20px;
+    width: 162px;
   }
   .step {
     position: absolute;
@@ -21,7 +23,7 @@
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    p{
+    p {
       color: #00c457;
     }
   }
@@ -40,7 +42,7 @@
     font-size: 18px;
   }
   .step-one {
-    top: 10px;
+    top: 20px;
     left: 10px;
   }
 
@@ -61,7 +63,7 @@
   }
 
   .step-two {
-    top: 10px;
+    top: 20px;
     left: 150px;
   }
 }

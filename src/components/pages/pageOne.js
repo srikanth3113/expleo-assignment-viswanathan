@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from "../constants/footer"
 import Topbar from '../constants/topBar'
-import Form from "../pages/form"
+// import Form from "../pages/form"
 import { ThemeProvider } from "@mui/system";
 import theme from "../../styles/theme"
 
@@ -13,7 +13,7 @@ function pageOne() {
         <ThemeProvider theme={theme}>
 
             <Topbar />
-                <Form />
+                {/* <Form /> */}
             <Footer />
 
         </ThemeProvider>

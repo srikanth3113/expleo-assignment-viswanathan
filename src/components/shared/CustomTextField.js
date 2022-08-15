@@ -6,8 +6,8 @@ export default function CustomTextField(props) {
     type,
     name,
     onChange,
-    error,
-    helpertext,
+    error = true,
+    helperText,
     value,
     variant,
     onBlur,
@@ -34,6 +34,7 @@ export default function CustomTextField(props) {
       return !/[0-9]/.test(e.key) && e.preventDefault();
     }
   };
+
   return (
     <>
       <TextField
@@ -48,7 +49,7 @@ export default function CustomTextField(props) {
         onBlur={onBlur}
         value={value || ""}
         error={Boolean(error)}
-        helperText={helpertext || error}
+        helperText={helperText || error}
         style={style}
         InputProps={{
           onKeyPress: (e) => handleKeyPress(e),

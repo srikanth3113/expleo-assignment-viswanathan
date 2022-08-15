@@ -5,11 +5,13 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  position: relative;
   background-color: aqua;
 }
 .stepperContainer p {
   position: absolute;
   top: 20px;
+  width: 162px;
 }
 .stepperContainer .step {
   position: absolute;
@@ -45,7 +47,7 @@
   font-size: 18px;
 }
 .stepperContainer .step-one {
-  top: 10px;
+  top: 20px;
   left: 10px;
 }
 .stepperContainer .step-one::after {
@@ -62,6 +64,6 @@
   z-index: -1;
 }
 .stepperContainer .step-two {
-  top: 10px;
+  top: 20px;
   left: 150px;
 }/*# sourceMappingURL=stepper.css.map */

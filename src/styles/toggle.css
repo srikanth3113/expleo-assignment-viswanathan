@@ -94,4 +94,11 @@ body:not(:-moz-handler-blocked) fieldset {
     align-items: center;
   }
 }
-
+@media (max-width: 800px) {
+  .status span:first-of-type {
+    display: none;
+  }
+  .status span:last-of-type {
+    display: inline;
+  }
+}/*# sourceMappingURL=toggle.css.map */

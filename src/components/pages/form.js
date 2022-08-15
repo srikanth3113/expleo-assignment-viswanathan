@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { styled } from "@mui/system";
+import { Formik } from "formik";
+import * as Yup from "yup";
 import { Box, Typography } from '@mui/material';
 import CustomButton from "../shared/CustomButton";
 import CustomTextField from "../shared/CustomTextField";
@@ -12,7 +14,7 @@ const FormContainer = styled(Box)(({ theme }) => {
     return {
         width: "45%",
         // height: "calc(100vh - 66px)",
-   
+
         background: "#FFFFFF",
         border: `1px solid ${theme.palette.secondary.light}`,
         borderRadius: "8px",
@@ -44,7 +46,6 @@ const ToggleContainer = styled(Box)({
 const RegistrationFormContainer = styled(Box)({
     height: "auto",
     width: "100%",
-    backgroundColor: "blue",
 });
 const RegistrationHeader = styled(Box)({
     display: "flex",
@@ -60,7 +61,6 @@ const RegistrationHeadingText = styled(Typography)({
 const PostCodeFormContainer = styled(Box)({
     height: "auto",
     width: "100%",
-    backgroundColor: "lightgrey",
 });
 const PostcodeHeader = styled(Box)({
     display: "flex",
@@ -76,59 +76,90 @@ const SwitchableFormContainer = styled(Box)({
     width: "100%",
 
 });
-function form() {
+const Form = () => {
+    // function Form() {
+    const [buttonVal, setButtonval] = useState(false);
+
+    console.log('buttonVal: ', buttonVal);
+    const validationSchema = Yup.object({
+        registrationNumber: Yup.number().required(),
+        postCode: Yup.number().required(),
+
+    });
+
+    const initialValues = {
+        registrationNumber: "",
+        postCode: ""
+    };
+    const onSubmit = (values) => {
+        alert(JSON.stringify(values, null, 2));
+    };
     return (
-        <FormContainer>
-            <InnerFormContainer>
-                <Box>
-                    <Typography variant="h6" gutterBottom component="div">
-                        One more thing
-                    </Typography>
-                    <Typography variant="h6" gutterBottom component="div">
-                        What's your vehicle registration number or garaging postcode?
-                    </Typography>
-                    <ToggleContainer>
-                        <Toggle />
-                    </ToggleContainer>
-                </Box>
+        <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={async (values, { resetForm }) => {
+                await onSubmit(values);
+                resetForm();
+            }}
+        >
+            <Form>
+                <FormContainer>
+                    <InnerFormContainer>
+                        <Box>
+                            <Typography variant="h6" gutterBottom component="div">
+                                One more thing
+                            </Typography>
+                            <Typography variant="h6" gutterBottom component="div">
+                                What's your vehicle registration number or garaging postcode?
+                            </Typography>
+                            <ToggleContainer>
+                                <Toggle buttonVal={buttonVal} setButtonval={setButtonval} />
+                            </ToggleContainer>
+                        </Box>
 
-                <SwitchableFormContainer>
-                    <RegistrationFormContainer >
-                        <RegistrationHeader>
-                            <RegistrationHeadingText variant="h6" component="div">
-                                What's your vehicle registration number?
-                            </RegistrationHeadingText>
-                            <Tooltip title="Delete">
-                                <IconButton>
-                                    <InfoOutlinedIcon />
-                                </IconButton>
-                            </Tooltip>
-                        </RegistrationHeader>
-                        <CustomTextField label="Registration number" helperText="Some important hi how are you text" />
-                    </RegistrationFormContainer>
+                        <SwitchableFormContainer>
+                            {!buttonVal ? <RegistrationFormContainer >
+                                <RegistrationHeader>
+                                    <RegistrationHeadingText variant="h6"
+                                        type="number"
+                                        name="registrationNumber"
+                                        component="div">
+                                        What's your vehicle registration number?
+                                    </RegistrationHeadingText>
+                                    <Tooltip title="Delete">
+                                        <IconButton>
+                                            <InfoOutlinedIcon />
+                                        </IconButton>
+                                    </Tooltip>
+                                </RegistrationHeader>
+                                <CustomTextField label="Registration number" helperText="Please enter the registration of the insured vehicle" />
+                            </RegistrationFormContainer> : <PostCodeFormContainer >
+                                <PostcodeHeader>
+                                    <PostcodeHeadingText variant="h6"
+                                        type="number"
+                                        name="postCode"
+                                        component="div">
+                                        What's your postcode?
+                                    </PostcodeHeadingText>
+                                    <Tooltip title="Delete">
+                                        <IconButton>
+                                            <InfoOutlinedIcon />
+                                        </IconButton>
+                                    </Tooltip>
+                                </PostcodeHeader>
+                                <CustomTextField label="Postcode" helperText="Please enter the postcode where your car is garaged" />
+                            </PostCodeFormContainer>}
 
-
-                    <PostCodeFormContainer >
-                        <PostcodeHeader>
-                            <PostcodeHeadingText variant="h6" component="div">
-                                What's your postcode?
-                            </PostcodeHeadingText>
-                            <Tooltip title="Delete">
-                                <IconButton>
-                                    <InfoOutlinedIcon />
-                                </IconButton>
-                            </Tooltip>
-                        </PostcodeHeader>
-                        <CustomTextField label="Postcode" helperText="Some important hi how are you text" />
-                    </PostCodeFormContainer>
-                </SwitchableFormContainer>
-                <ButtonContainer >
-                    <CustomButton label="Continue " />
-                </ButtonContainer>
-            </InnerFormContainer>
-        </FormContainer>
-
+                        </SwitchableFormContainer>
+                        <ButtonContainer >
+                            <CustomButton label="Continue" type="submit"/>
+                        </ButtonContainer>
+                    </InnerFormContainer>
+                </FormContainer >
+            </Form>
+        </Formik>
     )
 }
 
-export default form
+export default Form

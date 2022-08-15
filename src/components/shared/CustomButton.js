@@ -23,13 +23,13 @@ export const CustomButton = (props) => {
         alignItems: "center",
         borderRadius: "16px",
         backgroundColor: "#F7F8F9",
-       
+
       }}
     >
       <Button
         variant={variant}
         // className={props.uiSchema.className}
-        // onClick={() => props.uiSchema.onClick && props.uiSchema.onClick()}
+        onClick={(event) => console.log("clicked")}
         type={type || "submit"}
         color={color}
         disabled={isViewMode}
