@@ -4,9 +4,10 @@ import TextField from "@mui/material/TextField";
 export default function CustomTextField(props) {
   const {
     type,
+   
     name,
     onChange,
-    error = true,
+    error,
     helperText,
     value,
     variant,

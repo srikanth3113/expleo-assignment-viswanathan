@@ -9,6 +9,7 @@ export const CustomButton = (props) => {
     label,
     variant = "text",
     type,
+    onClick,
     isViewMode = false,
   } = props;
 
@@ -29,7 +30,7 @@ export const CustomButton = (props) => {
       <Button
         variant={variant}
         // className={props.uiSchema.className}
-        onClick={(event) => console.log("clicked")}
+        onClick={onClick}
         type={type || "submit"}
         color={color}
         disabled={isViewMode}
