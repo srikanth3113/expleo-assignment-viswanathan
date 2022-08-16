@@ -27,7 +27,6 @@ body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
 
-/* TOGGLE STYLING */
 .toggle {
   width: -webkit-fit-content;
   width: -moz-fit-content;

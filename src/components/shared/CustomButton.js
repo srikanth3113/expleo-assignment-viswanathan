@@ -29,7 +29,6 @@ export const CustomButton = (props) => {
     >
       <Button
         variant={variant}
-        // className={props.uiSchema.className}
         onClick={onClick}
         type={type || "submit"}
         color={color}

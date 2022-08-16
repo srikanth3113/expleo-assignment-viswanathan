@@ -21,7 +21,6 @@ export default function CustomTextField(props) {
     fieldType,
     autoComplete,
     onkeydown,
-    // className,
   } = props;
 
   const handleKeyPress = (e) => {

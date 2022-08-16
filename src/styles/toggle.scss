@@ -16,7 +16,6 @@ fieldset {
   border: none;
   border: solid 1px #4E5D78;
   border-radius: 6px;
-//   min-width: 0;
 width: fit-content;
   background-color: #fff;
 }
@@ -25,7 +24,6 @@ body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
 
-/* TOGGLE STYLING */
 .toggle {
   width: fit-content;
   box-sizing: border-box;

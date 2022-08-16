@@ -12,7 +12,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 const FormContainer = styled(Box)(({ theme }) => {
     return {
-        width: "45%",
+        width: "40%",
         // height: "calc(100vh - 66px)",
         background: `#${theme.palette.secondary.main}`,
         border: `1px solid ${theme.palette.secondary.light}`,
@@ -20,10 +20,11 @@ const FormContainer = styled(Box)(({ theme }) => {
         margin: "30px auto",
         display: "flex",
         justifyContent: "center",
-        padding: "20px",
+        padding: "40px",
         boxShadow: "0px 0 10px rgba(0, 0, 0, 0.8)",
         ['@media (max-width: 768px)']: { // eslint-disable-line no-useless-computed-key
-            width: "80%",
+            width: "70%",
+
         }
     };
 });
@@ -35,6 +36,7 @@ const InnerFormContainer = styled(Box)({
 
 const ButtonContainer = styled(Box)(({ theme }) => {
     return {
+        marginTop: "8%",
         height: "48px",
         width: "100%",
         backgroundColor: "white",
@@ -47,7 +49,7 @@ const ToggleContainer = styled(Box)({
     width: "100%",
     display: "flex",
     justifyContent: "center",
-
+    marginBottom: "10%"
 });
 const RegistrationFormContainer = styled(Box)({
     height: "auto",
@@ -59,9 +61,22 @@ const RegistrationHeader = styled(Box)({
     justifyContent: "center",
     width: "100%",
 });
-const RegistrationHeadingText = styled(Typography)({
-    fontWeight: "bold",
-    marginBottom: "0px"
+const FormHeadingText = styled(Typography)(({ theme }) => {
+    return {
+        fontWeight: "bold",
+        marginBottom: "0px",
+        fontSize: "1.2rem",
+        color: `${theme.palette.custom.main} !important`
+    };
+});
+
+const FormBodyText = styled(Typography)(({ theme }) => {
+    return {
+        color: `${theme.palette.custom.main} !important`,
+        ['@media (max-width: 768px)']: { // eslint-disable-line no-useless-computed-key
+            fontSize: "18px"
+        }
+    };
 });
 
 const PostCodeFormContainer = styled(Box)({
@@ -78,12 +93,13 @@ const PostcodeHeader = styled(Box)({
 const PostcodeHeadingText = styled(Typography)({
     fontWeight: "bold",
 });
+
+
 const SwitchableFormContainer = styled(Box)({
     width: "100%",
 
 });
 const VehicleForm = () => {
-    // function Form() {
     const [buttonVal, setButtonval] = useState(false);
 
     const initialValues = {
@@ -110,12 +126,12 @@ const VehicleForm = () => {
         <FormContainer>
             <InnerFormContainer>
                 <Box>
-                    <Typography variant="h6" gutterBottom component="div">
+                    <FormHeadingText variant="h6" gutterBottom component="div">
                         One more thing
-                    </Typography>
-                    <Typography variant="h6" gutterBottom component="div">
+                    </FormHeadingText>
+                    <FormBodyText variant="h6" gutterBottom component="div">
                         What's your vehicle registration number or garaging postcode?
-                    </Typography>
+                    </FormBodyText>
                     <ToggleContainer>
                         <Toggle buttonVal={buttonVal} setButtonval={setButtonval} />
                     </ToggleContainer>
@@ -124,13 +140,13 @@ const VehicleForm = () => {
                 <SwitchableFormContainer>
                     {!buttonVal ? <RegistrationFormContainer >
                         <RegistrationHeader>
-                            <RegistrationHeadingText variant="h6"
+                            <FormHeadingText variant="h6"
                                 type="number"
                                 name="registrationNumber"
                                 component="div">
                                 What's your vehicle registration number?
-                            </RegistrationHeadingText>
-                            <Tooltip title="Delete">
+                            </FormHeadingText>
+                            <Tooltip title="registration number">
                                 <IconButton>
                                     <InfoOutlinedIcon />
                                 </IconButton>
@@ -155,7 +171,7 @@ const VehicleForm = () => {
                                 component="div">
                                 What's your postcode?
                             </PostcodeHeadingText>
-                            <Tooltip title="Delete">
+                            <Tooltip title="postcode">
                                 <IconButton>
                                     <InfoOutlinedIcon />
                                 </IconButton>

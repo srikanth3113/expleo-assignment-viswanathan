@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-// import blue from '@mui/material/colors/blue';
 
 const theme = createTheme({
     palette: {
@@ -27,15 +26,22 @@ const theme = createTheme({
             dark: '#ba000d',
             contrastText: '#ba000d',
         },
-        button:{
+        button: {
             light: '#ba000d',
             main: '#7D8088',
             dark: '#ba000d',
             contrastText: '#ba000d',
         },
+        text: {
+            light: '#ba000d',
+            main: '#FF0000',
+            dark: '#ba000d',
+            contrastText: '#ba000d',
+
+        },
         custom: {
             light: '#00000089',
-            main: '#f57c00',
+            main: '#0A1F44',
             dark: '000407',
             contrastText: 'rgba(0, 0, 0, 0.87)',
         }
