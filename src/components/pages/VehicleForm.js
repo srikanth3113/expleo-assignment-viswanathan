@@ -23,7 +23,8 @@ const FormContainer = styled(Box)(({ theme }) => {
         padding: "40px",
         boxShadow: "0px 0 10px rgba(0, 0, 0, 0.8)",
         ['@media (max-width: 768px)']: { // eslint-disable-line no-useless-computed-key
-            width: "70%",
+            width: "80%",
+            padding: "20px",
 
         }
     };
@@ -72,6 +73,8 @@ const FormHeadingText = styled(Typography)(({ theme }) => {
 
 const FormBodyText = styled(Typography)(({ theme }) => {
     return {
+        width: "95%",
+        margin: "auto",
         color: `${theme.palette.custom.main} !important`,
         ['@media (max-width: 768px)']: { // eslint-disable-line no-useless-computed-key
             fontSize: "18px"
