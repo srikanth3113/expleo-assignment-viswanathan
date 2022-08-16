@@ -15,9 +15,21 @@ const theme = createTheme({
             dark: '#000000DE',
             contrastText: '#909090',
         },
+        templateTheme: {
+            light: '#707070',
+            main: '#14284B',
+            dark: '#000000DE',
+            contrastText: '#909090',
+        },
         error: {
             light: '#ba000d',
             main: '#FF0000',
+            dark: '#ba000d',
+            contrastText: '#ba000d',
+        },
+        button:{
+            light: '#ba000d',
+            main: '#7D8088',
             dark: '#ba000d',
             contrastText: '#ba000d',
         },

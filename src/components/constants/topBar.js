@@ -9,7 +9,7 @@ const StyledtopBarContainer = styled(Box)(({ theme }) => {
     return {
         width: "100%",
         height: "90px",
-        backgroundColor: "#14284B",
+        backgroundColor: `${theme.palette.templateTheme.main}`,
         boxSizing: "border-box",
         border: `1px solid ${theme.palette.secondary.light}`,
         padding: "0px 24px 10px 24px",
@@ -24,29 +24,26 @@ const DesktopTopbarContainer = styled(Box)({
     justifyContent: "space-between",
     alignItems: "center",
 
-    // display: "none",
-    // ['@media (max-width: 768px)']: { // eslint-disable-line no-useless-computed-key
-    //     display: "block",
-    //     width: "100%"
-    // }
 });
-const StyledIconContainer = styled(Box)({
-    height: "48px",
-    width: "100px",
-    // backgroundColor: "#00AFF4",
-    color: "white",
-    alignItems: "center",
-    display: "flex",
-    justifyContent: "center",
-    fontSize: "24px",
-    fontWeight: "bold",
-    ['@media (max-width: 768px)']: { // eslint-disable-line no-useless-computed-key
-        width: "95%",
-        fontSize: "35px",
-        padding: "0 0 0 30px",
 
-    }
 
+const StyledIconContainer = styled(Box)(({ theme }) => {
+    return {
+        height: "48px",
+        width: "100px",
+        color: `${theme.palette.secondary.light}`,
+        alignItems: "center",
+        display: "flex",
+        justifyContent: "center",
+        fontSize: "24px",
+        fontWeight: "bold",
+        ['@media (max-width: 768px)']: { // eslint-disable-line no-useless-computed-key
+            width: "95%",
+            fontSize: "35px",
+            padding: "0 0 0 30px",
+
+        }
+    };
 });
 
 const StyledStepperContainer = styled(Box)({
