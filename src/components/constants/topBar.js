@@ -31,11 +31,11 @@ const StyledIconContainer = styled(Box)(({ theme }) => {
     return {
         height: "48px",
         width: "100px",
-        color: `${theme.palette.secondary.light}`,
+        color: `${theme.palette.primary.light}`,
         alignItems: "center",
         display: "flex",
         justifyContent: "center",
-        fontSize: "24px",
+        fontSize: "32px",
         fontWeight: "bold",
         ['@media (max-width: 768px)']: { // eslint-disable-line no-useless-computed-key
             width: "95%",
