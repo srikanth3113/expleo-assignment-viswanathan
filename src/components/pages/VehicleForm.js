@@ -75,6 +75,7 @@ const FormBodyText = styled(Typography)(({ theme }) => {
     return {
         width: "95%",
         margin: "auto",
+        fontWeight: "400",
         color: `${theme.palette.custom.main} !important`,
         ['@media (max-width: 768px)']: { // eslint-disable-line no-useless-computed-key
             fontSize: "18px"
